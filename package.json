@@ -1,0 +1,7 @@
+{
+  "name": "login_app",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "^3.4.0"
+  }
+}
