@@ -1,0 +1,29 @@
+<h1>Edit Book</h1>
+<% if @book.errors.any? %>
+  <h2>The following errors prevented the book from saving:</h2>
+  <ul>
+    <% @book.errors.full_messages.each do |msg|%>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+<p>
+  <%= link_to 'Back', books_path %>
+</p>
+<%= form_for @book do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </p>
+  <p>
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </p>
+  <p>
+    <%= f.submit "Save changes", class: "btn btn-primary" %>
+  </p>
+<% end %>

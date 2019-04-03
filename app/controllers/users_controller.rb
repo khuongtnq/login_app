@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     respond_to do |format|
       if @user.save
-        format.html { redirect_to user, notisce: 'Product was successfully created.' }
+        format.html { redirect_to @user, notisce: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }

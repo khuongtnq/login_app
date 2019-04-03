@@ -1,0 +1,11 @@
+<h2 align="center">Title: <%= @book.name %></h2>
+<div class="well col-xs-8 col-xs-offset-2">
+  <h5 class="center"><strong>Author:</strong></h5>
+  <hr>
+  <%= simple_format(@book.author) %>
+  <h5 class="center"><strong>Year:</strong></h5>
+  <hr>
+  <%= @book.year %>
+  <br>
+  <%= link_to "Edit", edit_book_path(@book), class: "btn btn-xs btn-primary" %> |
+<%= link_to 'Back', books_path, class: "btn btn-xs btn-success" %>
