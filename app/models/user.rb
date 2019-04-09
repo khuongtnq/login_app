@@ -10,7 +10,7 @@ class User < ApplicationRecord
 						uniqueness: { case_sensitive: false }
 	has_many :access_tokens, class_name: "Doorkeeper::AccessToken",
     foreign_key: :resource_owner_id, dependent: :destroy
-	has_many :books
+	has_many :books, dependent: :destroy
     class <<self
     	def authenticate params
     		user = User.find_by name: params[:name]
