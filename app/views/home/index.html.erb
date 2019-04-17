@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>Breadcrumbs</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if @breadcrumbs && @breadcrumbs.count > 1 %>
+  <h3>Surf History</h3>
+  <ul>
+    <% @breadcrumbs[0..2].each do |breadcrumb| %>
+      <li><%= link_to breadcrumb, breadcrumb %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'home/ping'
+  get 'home/pong'
+  get 'home/index'
   resources :robots
   get 'books/index'
   get 'books/new'
@@ -14,7 +17,9 @@ Rails.application.routes.draw do
   get     "login"    => "session#new"
   post    "login"    => "session#create"
   delete  "logout"   => "session#destroy"
-  resources :users
+  resources :users do
+    collection {post :import}
+  end
   resources :books
   resources :account_activations, only: [:edit]
 end

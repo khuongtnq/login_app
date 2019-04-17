@@ -30,6 +30,9 @@ gem "bootstrap-sass", "~> 3.3.6"
 gem 'sassc-rails', '>= 2.0.0'
 gem "doorkeeper"
 gem "active_model_serializers", "~> 0.10.0"
+gem "roo"
+gem "roo-xls"
+gem 'simple_form'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

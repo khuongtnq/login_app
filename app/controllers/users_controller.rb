@@ -3,6 +3,11 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @search = params["search"]
+    if @search.present?
+      @name = @search["name"]
+      @users = User.where("name LIKE ?", "%#{@name}%")
+    end
   end
 
   def show
@@ -11,6 +16,11 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+  end
+
+  def import
+   @importer = User.import_file params[:file]
+    redirect_to users_path, notice: "Data imported"
   end
 
   def create
