@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     if @search.present?
       @name = @search["name"]
       @users = User.where("name LIKE ?", "%#{@name}%")
+      @users = @users.page(params[:page]).per(5)
     end
   end
 
