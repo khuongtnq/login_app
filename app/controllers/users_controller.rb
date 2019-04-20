@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   skip_before_action :require_login, only: %i(new create)
 
   def index
-    @users = User.all
+    @users = User.all.page(params[:page]).per(5)
     @search = params["search"]
     if @search.present?
       @name = @search["name"]
